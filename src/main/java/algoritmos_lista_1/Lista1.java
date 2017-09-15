@@ -13,7 +13,7 @@ public class Lista1 {
         int firstNumber = scan.nextInt();
         int secondNumber = scan.nextInt();
         int result = firstNumber * secondNumber;
-        System.out.println(result);
+        System.out.println("Multiplication of two numbers " + result);
     }
 
     public static void potencyOfTwoNumber() {
@@ -23,31 +23,33 @@ public class Lista1 {
         System.out.println(Math.pow(base, exponent));
     }
 
-//    public static int returnSumOfTwoSquares() {
-//
-//        return sun;
-//    }
+    public static void sumOfTwoSquares() {
+        int squareA = scan.nextInt();
+        int squareB = scan.nextInt();
 
-//    public static int printConsecutiveNumbers() {
-//
-//        return num;
-//    }
+        System.out.println("Sum of two squares " + (squareA * squareA) + (squareB * squareB));
 
+    }
 
-//    public static int printNextNumber() {
-//
-//        return n;
-//    }
+    public static void printConsecutiveNumbers() {
+        int numberA = scan.nextInt();
+        System.out.println("The consecutive number is " + getConsecutiveNumber(numberA));
+
+        int numberB = scan.nextInt();
+        System.out.println("The consecutive number is " + getConsecutiveNumber(numberB));
+
+    }
 
     public static void calculateAreaOfSquare() {
         int side = scan.nextInt();
-        System.out.print(side * side);
+        System.out.print("Square area " + side * side);
     }
 
     public static void arithmeticSums() {
         int valueA = scan.nextInt();
         int valueB = scan.nextInt();
         int valueC = scan.nextInt();
+
 
         returnTriangleArea(valueA, valueC);
         returnAreaOfCircle(valueC);
@@ -157,6 +159,26 @@ public class Lista1 {
         } else {
             System.out.println("impossible to calculate");
         }
+    }
+
+
+//    Leia a hora inicial e a hora final de um jogo.
+//    A seguir calcule a duração do jogo, sabendo que o mesmo pode começar em um dia
+//    e terminar em outro, tendo uma duração mínima de 1 hora e máxima de 24 horas.
+//    Veja abaixo alguns exemplos. Não fixe esses valores no código.
+//    Você pode usá­los para TESTAR seu algoritmo:
+
+    public static void getGameDuration(){
+
+    }
+
+
+//    Leia 4 valores inteiros A, B, C e D. A seguir,
+//    se B for maiordoqueCeseDformaiordoqueA,
+//    e asoma de C com D for maior que a soma de A e B e se C e D,
+//    ambos, forem positivos e se avariávelAforpar escrever a mensagem "Valores aceitos",
+//    senão escrever "Valores nao aceitos".
+    public static void verifyAceptNumbers(){
 
     }
 
@@ -182,5 +204,9 @@ public class Lista1 {
 
     private static void returnPerimeterOfRectangle(int side1, int side2) {
         System.out.println("perimeter of rectangle " + (side1 + side1) + (side2 + side2));
+    }
+
+    private static int getConsecutiveNumber(int number) {
+        return (number > 0) ? number + 1 : number + 1;
     }
 }
