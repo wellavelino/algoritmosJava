@@ -1,6 +1,8 @@
 package algoritmos_lista_1;
 
 
+import java.text.ParseException;
+
 import static algoritmos_lista_1.Lista1.*;
 
 /**
@@ -9,7 +11,7 @@ import static algoritmos_lista_1.Lista1.*;
 public class Algoritmos1 {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
         System.out.println("Insert two number to multiply");
         multiplicationOfTwoNumbers();
@@ -56,7 +58,8 @@ public class Algoritmos1 {
         System.out.println("Bhaskara");
         calculateBhaskara();
 
-
+        System.out.println("Game duratiton");
+        getGameDuration();
 
     }
 }

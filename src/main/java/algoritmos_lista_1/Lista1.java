@@ -1,5 +1,8 @@
 package algoritmos_lista_1;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -7,6 +10,7 @@ import java.util.Scanner;
  */
 public class Lista1 {
     static final Scanner scan = new Scanner(System.in);
+    public static final int DAY_DURATION = 24;
 
     public static void multiplicationOfTwoNumbers() {
 
@@ -168,17 +172,31 @@ public class Lista1 {
 //    Veja abaixo alguns exemplos. Não fixe esses valores no código.
 //    Você pode usá­los para TESTAR seu algoritmo:
 
-    public static void getGameDuration(){
+    public static void getGameDuration() {
+        int initalTime = scan.nextInt();
+        int finalTime = scan.nextInt();
+        int gameDuration = 0;
 
+        if (initalTime > finalTime) {
+            gameDuration = (DAY_DURATION + finalTime) - initalTime;
+            System.out.println("Game duration " + gameDuration);
+        } else if (initalTime < finalTime) {
+            gameDuration = finalTime - initalTime;
+            System.out.println("Game Duration" + gameDuration);
+        } else {
+            System.out.println("24 hours");
+        }
     }
-
-
-//    Leia 4 valores inteiros A, B, C e D. A seguir,
-//    se B for maiordoqueCeseDformaiordoqueA,
+pqp
+    //    Leia 4 valores inteiros A, B, C e D. A seguir,
+//    se B for maior do que C e se D formaior do que A,
 //    e asoma de C com D for maior que a soma de A e B e se C e D,
 //    ambos, forem positivos e se avariávelAforpar escrever a mensagem "Valores aceitos",
 //    senão escrever "Valores nao aceitos".
-    public static void verifyAceptNumbers(){
+    public static void verifyAceptNumbers() {
+        int numberA = scan.nextInt();
+        int numberB = scan.nextInt();
+        int numberC = scan.nextInt();
 
     }
 
@@ -209,4 +227,5 @@ public class Lista1 {
     private static int getConsecutiveNumber(int number) {
         return (number > 0) ? number + 1 : number + 1;
     }
+
 }
