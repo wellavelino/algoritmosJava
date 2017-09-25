@@ -4,6 +4,7 @@ package algoritmos_lista_1;
 import java.text.ParseException;
 
 import static algoritmos_lista_1.Lista1.*;
+import static algoritmos_lista_1.Lista2.*;
 
 /**
  * Created by wellingtonsantos on 9/8/17.
@@ -61,5 +62,28 @@ public class Algoritmos1 {
         System.out.println("Game duratiton");
         getGameDuration();
 
+        System.out.println("Verify accepted numbers");
+        verifyAceptNumbers();
+
+        System.out.println("triangle type");
+        triangleType();
+
+        System.out.println("SWITCH CASEEE!!!!!!!!");
+
+        numberDividiBy3();
+
+        daysOfWeek();
+
+        dayInMonth();
+
+        vacationsTime();
+
+        identifyDayOfWeek();
+
+        calculateTheHealthAgreement();
+
+        isValidCPF();
+
+        simpleCalculate();
     }
 }

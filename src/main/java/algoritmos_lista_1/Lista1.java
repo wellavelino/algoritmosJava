@@ -187,17 +187,76 @@ public class Lista1 {
             System.out.println("24 hours");
         }
     }
-pqp
-    //    Leia 4 valores inteiros A, B, C e D. A seguir,
-//    se B for maior do que C e se D formaior do que A,
-//    e asoma de C com D for maior que a soma de A e B e se C e D,
-//    ambos, forem positivos e se avariávelAforpar escrever a mensagem "Valores aceitos",
+//    Leia 4 valores inteiros A, B, C e D. A seguir,
+//    se B for maior do que C e se D for maior do que A,
+//
+//
+//    e a soma de C com D for maior que a soma de A e B e se C e D,
+//    ambos, forem positivos e se a variável A for par escrever a mensagem "Valores aceitos",
 //    senão escrever "Valores nao aceitos".
+
+    // se b > c && D > A
+    // c+d > a + b
+    // if c & d forem positivos, variavel A for par
     public static void verifyAceptNumbers() {
         int numberA = scan.nextInt();
         int numberB = scan.nextInt();
         int numberC = scan.nextInt();
+        int numberD = scan.nextInt();
 
+        if (numberB > numberC && numberD > numberA) {
+            if (acceptedValues(numberA, numberB, numberC, numberD)) {
+                System.out.println("Accepteds values");
+            }
+        } else {
+            System.out.println("Values not accepted");
+        }
+    }
+
+    //    Leia 3 números decimais A, B e C e ordene­os em ordem decrescente,
+// de modo que o lado A representa o maior dos 3 lados. A seguir,
+// determine o tipo de triângulo que estes três lados formam,
+// com base nos seguintes casos, sempre escrevendo uma mensagem adequada:
+//  se A ≥ B+C, apresente a mensagem: NAO FORMA TRIANGULO
+//● se A2    = B2    + C2   , apresente a mensagem: TRIANGULO RETANGULO
+//● se A2    > B2    + C2   , apresente a mensagem: TRIANGULO OBTUSANGULO
+//● se A2    < B2    + C2   , apresente a mensagem: TRIANGULO ACUTANGULO
+//● se os três lados forem iguais, apresente a mensagem: TRIANGULO EQUILATERO
+//● se apenas dois dos lados forem iguais, apresente a mensagem: TRIANGULO ISOSCELES
+//
+    public static void triangleType() {
+        ///refazer
+        double numberA = scan.nextLong();
+        double numberB = scan.nextLong();
+        double numberC = scan.nextLong();
+
+
+//        numberA = findMinNumber(numberA, numberB, numberC);
+//        numberB = findMidNumber(numberA, numberB, numberC);
+//        numberC = findMaxNumber(numberA, numberB, numberC);
+
+        System.out.println(numberA = findMinNumber(numberA, numberB, numberC));
+        System.out.println(numberB = findMidNumber(numberA, numberB, numberC));
+        System.out.println(numberC = findMaxNumber(numberA, numberB, numberC));
+
+        double numberAdouble = Math.pow(numberA, 2);
+        double numberBdouble = Math.pow(numberB, 2);
+        double numberCdouble = Math.pow(numberC, 2);
+
+        if (numberA >= numberB + numberC) {
+            System.out.println("NAO FORMA TRIANGULO");
+
+        } else if (numberAdouble == numberBdouble + numberCdouble) {
+            System.out.println("TRIANGULO RETANGULO");
+        } else if (numberAdouble > numberBdouble + numberCdouble) {
+            System.out.println("TRIANGULO OBTUSANGULO");
+        } else if (numberAdouble < numberBdouble + numberCdouble) {
+            System.out.println("TRIANGULO ACUTANGULO");
+        } else if (numberA == numberB && numberB == numberC) {
+            System.out.println("TRIANGULO EQUILATERO");
+        } else if (numberA == numberB || numberA == numberC || numberB == numberC) {
+            System.out.println("TRIANGULO ISOSCELES");
+        }
     }
 
     private static void returnTriangleArea(int base, int height) {
@@ -228,4 +287,41 @@ pqp
         return (number > 0) ? number + 1 : number + 1;
     }
 
+    private static boolean acceptedValues(int numberA, int numberB, int numberC, int numberD) {
+        int sumCD = numberC + numberD;
+        int sumAB = numberA + numberB;
+        boolean result = true;
+
+        if (sumCD > sumAB) {
+            if (numberC > 0 && numberD > 0) {
+                if (numberA % 2 == 0) {
+                    result = true;
+                } else
+                    result = false;
+            }
+        }
+        return result;
+    }
+
+    private static double findMinNumber(double numberA, double numberB, double numberC) {
+        double minorA = numberA < numberB ? numberA : numberB,
+                minorB = numberA < numberC ? numberA : numberC;
+
+        return minorA < minorB ? minorA : minorB;
+    }
+
+    private static double findMaxNumber(double numberA, double numberB, double numberC) {
+        double midA = numberA > numberB ? numberA : numberB,
+                midB = numberA > numberC ? numberA : numberC;
+
+        return midA > midB ? midA : midB;
+    }
+
+    private static double findMidNumber(double numberA, double numberB, double numberC) {
+        double maxA = findMinNumber(numberA, numberB, numberC),
+                maxB = findMaxNumber(numberA, numberB, numberC),
+                maxC = numberA == maxA ? numberB : numberA;
+
+        return maxC == maxB ? numberC : maxC;
+    }
 }
