@@ -185,36 +185,19 @@ public class Lista2 {
 
         int[] intCpf = convertIntoIntArray(CpfArray);
 
-        int sun = (intCpf[0] * 10) +
-                (intCpf[1] * 9) +
-                (intCpf[2] * 8) +
-                (intCpf[3] * 7) +
-                (intCpf[4] * 6) +
-                (intCpf[5] * 5) +
-                (intCpf[6] * 4) +
-                (intCpf[7] * 3) +
-                (intCpf[8] * 2);
+        int cpfSum = calculateCPF(intCpf,10,0);
 
-        sun = sun - (11 * (sun / 11));
+        cpfSum = cpfSum - (11 * (cpfSum / 11));
 
-        int resul = (sun == 0 || sun == 1) ? 0 : 11 - sun;
+        int resul = (cpfSum == 0 || cpfSum == 1) ? 0 : 11 - cpfSum;
+
         if (resul == intCpf[9]) {
-            System.out.println("alooo");
-            int sun2 = (intCpf[0] * 11) +
-                    (intCpf[1] * 10) +
-                    (intCpf[2] * 9) +
-                    (intCpf[3] * 8) +
-                    (intCpf[4] * 7) +
-                    (intCpf[5] * 6) +
-                    (intCpf[6] * 5) +
-                    (intCpf[7] * 4) +
-                    (intCpf[8] * 3) +
-                    (intCpf[9] * 2);
 
-            sun2 = sun2 - (11 * (sun2 / 11));
+            int sum2 = calculateCPF(intCpf, 11, 0);
 
-            int resul2 = (sun2 == 0 || sun2 == 1) ? 0 : 11 - sun2;
-            System.out.println(resul2);
+            sum2 = sum2 - (11 * (sum2 / 11));
+
+            int resul2 = (sum2 == 0 || sum2 == 1) ? 0 : 11 - sum2;
 
             if (resul2 == intCpf[10]) {
                 System.out.println("Valid CPF");
@@ -231,6 +214,15 @@ public class Lista2 {
         }
 
         return intArray;
+    }
+
+    private static int calculateCPF(int[] cpf, int i, int j){
+        int sun = 0;
+
+        for (; i >= 2 ; i--, j++) {
+            sun += cpf[j] * i;
+        }
+        return sun;
     }
 
     //Crie um programa que simule uma calculadora simples capaz de realizar as operações

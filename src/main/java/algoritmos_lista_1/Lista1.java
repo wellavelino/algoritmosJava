@@ -223,41 +223,41 @@ public class Lista1 {
 //● se A2    < B2    + C2   , apresente a mensagem: TRIANGULO ACUTANGULO
 //● se os três lados forem iguais, apresente a mensagem: TRIANGULO EQUILATERO
 //● se apenas dois dos lados forem iguais, apresente a mensagem: TRIANGULO ISOSCELES
+//refatorar
+//    public static void triangleType() {
+//        ///refazer
+//        double numberA = scan.nextLong();
+//        double numberB = scan.nextLong();
+//        double numberC = scan.nextLong();
 //
-    public static void triangleType() {
-        ///refazer
-        double numberA = scan.nextLong();
-        double numberB = scan.nextLong();
-        double numberC = scan.nextLong();
-
-
-//        numberA = findMinNumber(numberA, numberB, numberC);
-//        numberB = findMidNumber(numberA, numberB, numberC);
-//        numberC = findMaxNumber(numberA, numberB, numberC);
-
-        System.out.println(numberA = findMinNumber(numberA, numberB, numberC));
-        System.out.println(numberB = findMidNumber(numberA, numberB, numberC));
-        System.out.println(numberC = findMaxNumber(numberA, numberB, numberC));
-
-        double numberAdouble = Math.pow(numberA, 2);
-        double numberBdouble = Math.pow(numberB, 2);
-        double numberCdouble = Math.pow(numberC, 2);
-
-        if (numberA >= numberB + numberC) {
-            System.out.println("NAO FORMA TRIANGULO");
-
-        } else if (numberAdouble == numberBdouble + numberCdouble) {
-            System.out.println("TRIANGULO RETANGULO");
-        } else if (numberAdouble > numberBdouble + numberCdouble) {
-            System.out.println("TRIANGULO OBTUSANGULO");
-        } else if (numberAdouble < numberBdouble + numberCdouble) {
-            System.out.println("TRIANGULO ACUTANGULO");
-        } else if (numberA == numberB && numberB == numberC) {
-            System.out.println("TRIANGULO EQUILATERO");
-        } else if (numberA == numberB || numberA == numberC || numberB == numberC) {
-            System.out.println("TRIANGULO ISOSCELES");
-        }
-    }
+//
+////        numberA = findMinNumber(numberA, numberB, numberC);
+////        numberB = findMidNumber(numberA, numberB, numberC);
+////        numberC = findMaxNumber(numberA, numberB, numberC);
+//
+//        System.out.println(numberA = findMinNumber(numberA, numberB, numberC));
+//        System.out.println(numberB = findMidNumber(numberA, numberB, numberC));
+//        System.out.println(numberC = findMaxNumber(numberA, numberB, numberC));
+//
+//        double numberAdouble = Math.pow(numberA, 2);
+//        double numberBdouble = Math.pow(numberB, 2);
+//        double numberCdouble = Math.pow(numberC, 2);
+//
+//        if (numberA >= numberB + numberC) {
+//            System.out.println("NAO FORMA TRIANGULO");
+//
+//        } else if (numberAdouble == numberBdouble + numberCdouble) {
+//            System.out.println("TRIANGULO RETANGULO");
+//        } else if (numberAdouble > numberBdouble + numberCdouble) {
+//            System.out.println("TRIANGULO OBTUSANGULO");
+//        } else if (numberAdouble < numberBdouble + numberCdouble) {
+//            System.out.println("TRIANGULO ACUTANGULO");
+//        } else if (numberA == numberB && numberB == numberC) {
+//            System.out.println("TRIANGULO EQUILATERO");
+//        } else if (numberA == numberB || numberA == numberC || numberB == numberC) {
+//            System.out.println("TRIANGULO ISOSCELES");
+//        }
+//    }
 
     private static void returnTriangleArea(int base, int height) {
         System.out.println("Triangle area " + base * height / 2);
@@ -287,7 +287,7 @@ public class Lista1 {
         return (number > 0) ? number + 1 : number + 1;
     }
 
-    private static boolean acceptedValues(int numberA, int numberB, int numberC, int numberD) {
+    private static boolean  acceptedValues(int numberA, int numberB, int numberC, int numberD) {
         int sumCD = numberC + numberD;
         int sumAB = numberA + numberB;
         boolean result = true;
