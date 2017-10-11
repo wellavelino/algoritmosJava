@@ -66,7 +66,7 @@ public class Algoritmos1 {
         verifyAceptNumbers();
 
         System.out.println("triangle type");
-        triangleType();
+        //triangleType();
 
         System.out.println("SWITCH CASEEE!!!!!!!!");
 
