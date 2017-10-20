@@ -79,60 +79,60 @@ public class Lista3 {
         System.out.println(name[ageIndex] + " " + age[ageIndex] + " " + gender[ageIndex]);
     }
 
-    public static void printMultiplyMinorof200(){
+    public static void printMultiplyMinorof200() {
         int count = 0;
-        while (count <= 200){
-            if ((count % 7) == 0){
+        while (count <= 200) {
+            if ((count % 7) == 0) {
                 System.out.println(count + " is a multiply of 7");
             }
             count++;
         }
     }
 
-    public static void calculateArithimetcAverage(){
+    public static void calculateArithimetcAverage() {
         int grades = 0;
         int quantity = 0;
-        for (int i = 13; i <= 73 ; i++) {
-            if((i % 2) == 0 ){
+        for (int i = 13; i <= 73; i++) {
+            if ((i % 2) == 0) {
                 quantity++;
                 grades = grades + i;
             }
         }
-        System.out.println(grades/quantity);
+        System.out.println(grades / quantity);
     }
 
-    public static void calculateClassArithimeticAverage(){
+    public static void calculateClassArithimeticAverage() {
         int studentQuantity = scan.nextInt();
         double arithimeticAverage = 0;
         int count = 0;
-        while (count < studentQuantity){
+        while (count < studentQuantity) {
             System.out.println("Insert the grade student");
             int classGrades = scan.nextInt();
 
             arithimeticAverage = arithimeticAverage + classGrades;
             count++;
         }
-        System.out.println("The arithimetic average is" + arithimeticAverage/count);
+        System.out.println("The arithimetic average is" + arithimeticAverage / count);
     }
 
-    public static void fractionSum(){
+    public static void fractionSum() {
         double sum = 0;
         for (int i = 2; i <= 20; i++) {
-            sum +=  1f/i;
+            sum += 1f / i;
         }
-        System.out.printf("%.2f",sum  + 1);
+        System.out.printf("%.2f", sum + 1);
     }
 
-    public static void fractionSumWithInput(){
+    public static void fractionSumWithInput() {
         int number = scan.nextInt();
         double sum = 1;
         for (int i = 2; i <= number; i++) {
-            if((i % 2)== 0){
-                sum -=  1f/i;
-            }else
-                sum += 1f/i;
+            if ((i % 2) == 0) {
+                sum -= 1f / i;
+            } else
+                sum += 1f / i;
         }
-        System.out.printf("%.2f",sum);
+        System.out.printf("%.2f", sum);
     }
 
     //TODO fazer o exercicio 12
@@ -151,10 +151,10 @@ public class Lista3 {
             sum += (float) expoent / (float) base;
         }
 
-        System.out.printf("%.2f",sum + 1);
+        System.out.printf("%.2f", sum + 1);
     }
 
-    public static void calculateNaturalNumber(){
+    public static void calculateNaturalNumber() {
         int number = scan.nextInt();
         float sum = 0;
         for (int k = 2; k <= number; k++) {
@@ -163,7 +163,142 @@ public class Lista3 {
                 sum += (float) i / (float) j;
             }
         }
-        System.out.printf("%.2f",sum + 1);
+        System.out.printf("%.2f", sum + 1);
     }
 
+    public static void factorialNumbers() {
+        System.out.println("Insert the number to calculate the factorial");
+        int factorial = 1;
+        int value = scan.nextInt();
+
+        if (value <= 0) {
+            System.out.println("Invalid value, the number must be greather than zero");
+            factorialNumbers();
+        } else {
+            for (int i = 1; i <= value; i++) {
+                factorial *= value;
+                System.out.println("The factorial is " + factorial);
+            }
+        }
+    }
+
+    public static void guessWhatNumberType() {
+        int number = 0;
+        int count = 1;
+        do {
+            number = scan.nextInt();
+            if (number == 0) {
+                System.out.println("NULO");
+            } else {
+                if (evenNumber(number)) {
+                    System.out.println("PAR");
+                } else {
+                    System.out.println("IMPAR");
+                }
+                if (number > 0) {
+                    System.out.println("POSITIVO");
+                } else {
+                    System.out.println("NEGATIVO");
+                }
+            }
+
+        } while (count++ <= number);
+    }
+
+    public static void dividingNumbers(){
+        int number = scan.nextInt();
+
+        for (int i = 1; i <= number ; i++) {
+           if (number % i == 0){
+               System.out.println(number + " id  dividing by "+ i);
+           }
+        }
+    }
+
+    public static void fibonacci() {
+        int fibo = 0;
+        int n = 0;
+        int after = 1;
+        int before = 0;
+        while (n < 46) {
+            fibo = before + after;
+            before = after;
+            after = fibo;
+            n++;
+            System.out.println(before);
+        }
+    }
+
+    public static void password(){
+        System.out.println("To login insert the password");
+        int pass = 0;
+        while (pass != 2002){
+            pass = scan.nextInt();
+            if (pass == 2002){
+                System.out.println("Garanted access");
+            }else{
+                System.out.println("Invalid password");
+            }
+        }
+    }
+
+    public static void atmSimulator() {
+        int deposit = 0;
+        int withdraw = 0;
+        int total = 0;
+        int option = 0;
+        System.out.println("insert the account balance ");
+        total = scan.nextInt();
+
+        do {
+            System.out.println("press 1 to deposit ");
+            System.out.println("press 2 to withdraw ");
+            System.out.println("press 3 to EXIT ");
+            option = scan.nextInt();
+            if (option == 1) {
+                System.out.println("deposit ");
+                deposit = scan.nextInt();
+                total += deposit;
+            } else if (option == 2) {
+                System.out.println("withdraw ");
+                withdraw = scan.nextInt();
+                total -= withdraw;
+            }
+
+        } while (option != 3);
+
+        if (total == 0) {
+            System.out.println("CONTA ZERADA");
+        } else if (total < 0) {
+            System.out.println("CONTA ESTOURADA");
+        } else {
+            System.out.println("CONTA PREFERENCIAL");
+        }
+    }
+
+    public static void perfectNumber(){
+        int number = scan.nextInt();
+        int total = 0;
+        for (int i = 1; i < number ; i++) {
+            if (number % i == 0){
+                total += i;
+            }
+        }
+        if (total == number){
+            System.out.println(number + " Is a perfect number");
+        }else {
+            System.out.println(number + " Isnt a perfect number");
+        }
+    }
+
+    private static boolean evenNumber(int number) {
+        boolean result = true;
+
+        if (number % 2 == 0) {
+            result = true;
+        } else {
+            result = false;
+        }
+        return result;
+    }
 }
