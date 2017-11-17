@@ -43,25 +43,55 @@ public class Lista4 {
         return fatorial;
     }
 
-    public static double formulaBhaskara(int num1, int num2, int  num3, int valor){
+    public static double formulaBhaskara(int num1, int num2, int num3, int valor) {
+        //guard clause
+        if (valor != 1 && valor != 2) {
+            System.out.println("Valor invalido deve ser 1 ou 2");
+        }
+
         double delta = Math.pow(num2, 2) - (4 * num1 * num3);
 
         if (delta > 0) {
             double x1 = (-num2 + Math.sqrt(delta) / (2 * num1));
             double x2 = (-num2 - Math.sqrt(delta) / (2 * num1));
+            double maiorRaiz = 0;
+            double menorRaiz = 0;
+
+            if (x1 > x2) {
+                maiorRaiz = x1;
+                menorRaiz = x2;
+            } else {
+                maiorRaiz = x2;
+                menorRaiz = x1;
+            }
+
+            if (valor == 1) {
+                return maiorRaiz;
+            } else {
+                return menorRaiz;
+            }
 
         } else {
-            System.out.println("impossible to calculate");
+            return -1;
         }
     }
 
+    public static double retornaVolumeEsfera(int raio){
+        double volume = 0;
 
-    public static void imprimeResutado(int resultado) {
+        return volume = 4/3 * Math.PI * (Math.pow(raio, 3));
+    }
+
+    public static void imprimeResultadoInt(int resultado) {
+        System.out.println("O resultado é " + resultado);
+    }
+
+    public static void imprimeResultadoDouble(double resultado){
         System.out.println("O resultado é " + resultado);
     }
 
     public static int entradaDados() {
-        System.out.println("Entre com um número inteiro");
+        System.out.println("Entre com um número");
         int entrada = scan.nextInt();
         return entrada;
     }
