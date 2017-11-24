@@ -11,9 +11,12 @@ import static algoritmos_lista_1.Lista4.*;
  * Created by wellingtonsantos on 9/8/17.
  */
 public class Algoritmos1 {
-    static final Scanner scan = new Scanner(System.in);
+    static final Scanner scan = new Scanner(System.in, "utf-8");
 
     public static void main(String[] args) throws ParseException {
+        String dad = scan.next();
+        System.out.println(dad);
+
         System.out.println("Escolha um algoritmo para testar");
         System.out.println("1 - menor dos tres números");
         System.out.println("2 - Soma dos antecessores");
@@ -22,6 +25,15 @@ public class Algoritmos1 {
         System.out.println("5 - Maior das raizes");
         System.out.println("6 - Retorna a raiz de acordo com a opcao");
         System.out.println("7 - Retorna volume de uma esfera");
+        System.out.println("8 - Retorna numero primo");
+        System.out.println("9  - terminar");
+        System.out.println("10  - categoria nadador");
+        System.out.println("11  - conceito final");
+        System.out.println("12  - peso ideal");
+        System.out.println("13  - numeros divisores");
+        System.out.println("14  - retorna a soma dos numeros");
+        System.out.println("15  - potencia");
+
 
         int opcao = scan.nextInt();
 
@@ -47,7 +59,7 @@ public class Algoritmos1 {
                 int f = entradaDados();
                 int soma = retornaSomaDosAntecessores(f);
                 int rFatorial = fatorial(f);
-                System.out.println("Resultado é " + rFatorial/soma);
+                System.out.println("Resultado é " + rFatorial / soma);
                 break;
             case 5:
                 int bnum1 = entradaDados();
@@ -70,6 +82,49 @@ public class Algoritmos1 {
                 int esfera = entradaDados();
                 double volume = retornaVolumeEsfera(esfera);
                 imprimeResultadoDouble(volume);
+                break;
+            case 8:
+                int n = entradaDados();
+                boolean numeroP = numeroPrimo(n);
+                imprimeResultadoBoleano(numeroP);
+                break;
+
+            case 9:
+                // todo
+                break;
+            case 10:
+                int idade = entradaDados();
+                String cat = retornaCategoriaNadador(idade);
+                imprimeResultadoString(cat);
+                break;
+            case 11:
+                int not = entradaDados();
+                String fi = retornaConceitoFinal(not);
+                imprimeResultadoString(fi);
+                break;
+            case 12:
+                double altura = entradaDadosDouble();
+                String sexo = entradaDadosString();
+
+                double p = retornaPesoIdeal(altura, sexo);
+                imprimeResultadoDouble(p);
+                break;
+            case 13:
+                int div = entradaDados();
+                int[] bla = numerosDivisores(div);
+                imprimeArray(bla);
+                break;
+            case 14:
+                int s = entradaDados();
+                int t = entradaDados();
+                int rre = retornaSoma(s, t);
+                imprimeResultadoInt(rre);
+                break;
+            case 15:
+                int io = entradaDados();
+                int oi = entradaDados();
+                double ptc = potencia(io, oi);
+                imprimeResultadoDouble(ptc);
 
         }
     }
